@@ -1,38 +1,44 @@
 # HDFS Log Anomaly Detection - Requirements
-# Python 3.8+
+# Target runtime: Python 3.13
 
-# Core Data Processing
-numpy==1.24.3
-pandas==2.0.3
+# --- Core Data Processing ---
+# NumPy 2.1+ supports Python 3.10–3.13 (incl. free-threaded). 
+numpy==2.1.2
 
-# Machine Learning
-scikit-learn==1.3.0
+# Pandas 2.2.2+ is compatible with NumPy 2.x and modern Python.
+pandas==2.2.3
 
-# Deep Learning
-tensorflow==2.13.0
-keras==2.13.1
+# --- Machine Learning ---
+# Newer scikit-learn supports Python 3.13 and NumPy 2.x.
+scikit-learn==1.6.1
 
-# Visualization
-matplotlib==3.7.2
-seaborn==0.12.2
+# --- Deep Learning ---
+# TensorFlow and Keras removed because there are no stable wheels for Python 3.13 yet.
+# If you downgrade Python to <=3.12, you can reintroduce these:
+# tensorflow==2.13.0
+# keras==2.13.1
+
+# --- Visualization ---
+# Matplotlib 3.9+ has wheels built against newer NumPy & Python versions.
+matplotlib==3.9.3
+seaborn==0.13.2
+
+# Your original Plotly pin is fine; 5.x works on 3.13.
 plotly==5.18.0
 
-# Streamlit Dashboard
-streamlit==1.29.0
+# --- Streamlit Dashboard ---
+# Your logs show Streamlit 1.52.0 already installed; you can pin that or keep 1.29.0.
+streamlit==1.52.0
 
-# Jupyter Notebooks (for EDA)
+# --- Jupyter Notebooks (for EDA, mostly local use) ---
 jupyter==1.0.0
-notebook==7.0.2
-ipykernel==6.25.1
+notebook==7.2.2
+ipykernel==6.29.5
 
-# Additional ML Libraries
-xgboost==1.7.6
-lightgbm==4.1.0
+# --- Additional ML Libraries ---
+# Recent releases known to work with Python 3.13 / NumPy 2.x.
+xgboost==2.1.4
+lightgbm==4.4.0
 
-# Utilities
-tqdm==4.66.1
-
-# Google Cloud (if deploying to GCP)
-# google-cloud-storage==2.10.0
-# google-cloud-bigquery==3.11.4
-# google-cloud-pubsub==2.18.4
+# --- Utilities ---
+tqdm==4.66.5
