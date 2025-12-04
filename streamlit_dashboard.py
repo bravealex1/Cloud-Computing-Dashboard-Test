@@ -3077,8 +3077,7 @@ def render_overview_page(anomaly_rate):
     with col4:
         st.markdown(render_metric_card(
             "98.7%",
-            "Best Model Accuracy",
-            "XGBoost",
+            "Final Model Accuracy",
             "positive"
         ), unsafe_allow_html=True)
     
